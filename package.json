@@ -1,0 +1,23 @@
+{
+  "name": "homework3-coffee-rag",
+  "version": "1.0.0",
+  "description": "作業 3：咖啡飲品迷你知識庫，使用 OpenAI Embeddings 與 Qdrant 進行語意搜尋。",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "init": "node scripts/embed-coffee.js",
+    "search:test": "node scripts/search-coffee-test.js"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^8.4.3",
+    "@qdrant/js-client-rest": "^1.18.0",
+    "csv-parse": "^6.2.1",
+    "dotenv": "^17.4.2",
+    "openai": "^6.38.0",
+    "ora": "^9.4.0"
+  }
+}
