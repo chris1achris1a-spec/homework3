@@ -5,6 +5,7 @@ import { spinner } from "./utils/spinner.js";
 try {
   while (true) {
     const query = (await input({ message: "請輸入想搜尋的咖啡問題：" })).trim();
+
     if (query === "") continue;
     if (query.toLowerCase() === "exit") {
       console.log("再會~");
@@ -14,11 +15,6 @@ try {
     const spin = spinner("搜尋咖啡知識庫中...").start();
     const results = await searchCoffee(query, 5);
     spin.stop();
-
-    if (results.length === 0) {
-      console.log("沒有找到相關咖啡資料。\n");
-      continue;
-    }
 
     for (const [i, r] of results.entries()) {
       console.log(`\n${i + 1}. ${r.name} (${r.englishName})`);
